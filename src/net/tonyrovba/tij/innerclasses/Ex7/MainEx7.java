@@ -9,7 +9,8 @@ public class MainEx7 {
 
         System.out.println(bank.getClientName());
 
-        bank.changeClientName("Tony Ro");
+        Bank.FrontOffice frontOffice = bank.getFrontOffice();
+        frontOffice.changeClientName("Tony Ro");
 
         System.out.println(bank.getClientName());
     }

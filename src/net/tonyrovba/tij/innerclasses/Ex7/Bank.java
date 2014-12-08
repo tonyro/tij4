@@ -10,15 +10,17 @@ public class Bank {
         return this.client;
     }
 
-    private class FrontOffice {
-        private String changeAndGetClientName(String clientName) {
-            client = clientName;
-
-            return client;
+    class FrontOffice {
+        void changeClientName(String clientName) {
+            Bank.this.changeClientName(clientName);
         }
     }
 
-    public void changeClientName(String clientName) {
-        new FrontOffice().changeAndGetClientName(clientName);
+    private void changeClientName(String clientName) {
+        this.client = clientName;
+    }
+
+    public FrontOffice getFrontOffice() {
+        return new FrontOffice();
     }
 }
