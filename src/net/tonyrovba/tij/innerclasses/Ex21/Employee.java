@@ -6,9 +6,15 @@ package net.tonyrovba.tij.innerclasses.Ex21;
 public interface Employee {
     String showPass();
 
-    public static class PassValidator implements Employee {
+    public static class PassValidator {
+        private static Employee employee;
+
+        public PassValidator(Employee employee) {
+            this.employee = employee;
+        }
+
         public static void validatePass() {
-            System.out.println(showPass());
+            System.out.println(employee.showPass());
         }
     }
 }
