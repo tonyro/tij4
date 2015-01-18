@@ -1,7 +1,5 @@
 package net.tonyrovba.tij.innerclasses.Ex4;
 
-import net.tonyrovba.tij.innerclasses.Ex4.*;
-
 /**
  * Created with IntelliJ IDEA.
  * User: tonyr
@@ -24,6 +22,6 @@ public class MainEx4 {
             selector.next();
         }
 
-        System.out.println(selector.getSequence().toString());
+        System.out.println(selector.getSequence());
     }
 }
