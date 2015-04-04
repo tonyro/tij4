@@ -17,31 +17,35 @@ public class Ex4Main {
     }
 
     public static void main(String[] args) {
-        String[] arr;
-        ArrayList<String> arrList;
-        LinkedList<String> linkedList;
-        HashSet<String> hashSet;
-        LinkedHashSet<String> linkedHashSet;
-        TreeSet<String> treeSet;
+        int n = 10;
+        String[] arr = new String[n];
+        
+        // Fill regular array of Strings
+        for (int i = 0; i < n; i++)
+            arr[i] = MovieNamesGenerator.next();
 
         System.out.println("ArrayList -->");
-        System.out.println(fill(new ArrayList<String>(), 10));
+        System.out.println(arr);
+        System.out.println("----------------------------------");
+
+        System.out.println("ArrayList -->");
+        System.out.println(fill(new ArrayList<String>(), n));
         System.out.println("----------------------------------");
 
         System.out.println("LinkedList -->");
-        System.out.println(fill(new LinkedList<String>(), 10));
+        System.out.println(fill(new LinkedList<String>(), n));
         System.out.println("----------------------------------");
 
         System.out.println("HashSet -->");
-        System.out.println(fill(new HashSet<String>(), 10));
+        System.out.println(fill(new HashSet<String>(), n));
         System.out.println("----------------------------------");
 
         System.out.println("LinkedHashSet -->");
-        System.out.println(fill(new LinkedHashSet<String>(), 10));
+        System.out.println(fill(new LinkedHashSet<String>(), n));
         System.out.println("----------------------------------");
 
         System.out.println("TreeSet -->");
-        System.out.println(fill(new TreeSet<String>(), 10));
+        System.out.println(fill(new TreeSet<String>(), n));
         System.out.println("----------------------------------");
     }
 }
