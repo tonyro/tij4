@@ -18,12 +18,12 @@ public class Mouse implements Rodent {
         this.shelter.addRef();
     }
 
-    @Override
+
     public void eat() {
         System.out.println("Mouse.eat()");
     }
 
-    @Override
+
     public void hide() {
         System.out.println("Mouse.hide()");
     }

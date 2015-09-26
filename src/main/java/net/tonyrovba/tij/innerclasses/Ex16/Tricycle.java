@@ -16,7 +16,7 @@ public class Tricycle implements Cycle {
     }
 
     public static CycleFactory factory = new CycleFactory() {
-        @Override
+
         public Cycle getCycle() {
             return new Tricycle();
         }

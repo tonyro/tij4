@@ -16,12 +16,12 @@ public class Hamster implements Rodent {
         this.shelter.addRef();
     }
 
-    @Override
+
     public void eat() {
         System.out.println("Hamster.eat()");
     }
 
-    @Override
+
     public void hide() {
         System.out.println("Hamster.hide()");
     }
