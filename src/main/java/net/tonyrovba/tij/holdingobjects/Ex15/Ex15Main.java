@@ -9,7 +9,5 @@ public class Ex15Main {
 
     public static void main(String[] args) {
         StringProcessor.process(PHRASE);
-
-        System.out.println(PHRASE.substring(-1, 5));
     }
 }
