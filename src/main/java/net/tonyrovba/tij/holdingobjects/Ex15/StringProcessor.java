@@ -52,7 +52,7 @@ public class StringProcessor {
                 }
             }
             if (phrase.charAt(index) == '-') {
-                System.out.println(storage.pop());
+                System.out.print(storage.pop());
                 index++;
             }
         }
