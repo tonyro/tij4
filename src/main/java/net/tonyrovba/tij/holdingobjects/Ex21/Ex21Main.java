@@ -2,9 +2,7 @@ package net.tonyrovba.tij.holdingobjects.Ex21;
 
 import net.tonyrovba.tij.utils.WordsGenerator;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by arovba on 11/22/15.
@@ -27,5 +25,16 @@ public class Ex21Main {
             }
 
         System.out.println(wordsCount);
+        List<String> keys = new LinkedList<>(wordsCount.keySet());
+        Collections.sort(keys, String.CASE_INSENSITIVE_ORDER);
+
+        String print = "{";
+
+        for (String key: keys)
+            print += key + "=" + wordsCount.get(key) + ", ";
+
+        print += "}";
+
+        System.out.println(print);
     }
 }
