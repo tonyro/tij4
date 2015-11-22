@@ -1,7 +1,9 @@
 package net.tonyrovba.tij.utils;
 
-import java.util.ArrayList;
-import java.util.Random;
+import java.io.File;
+import java.security.CodeSource;
+import java.util.*;
+import java.util.regex.Pattern;
 
 /**
  * Created by arovba on 11/9/15.
@@ -21,6 +23,26 @@ public class WordsGenerator {
             }
             words.add(String.valueOf(word));
         }
+        return words;
+    }
+
+    public static ArrayList<String> getWordsFromFile(String fileName) {
+        ArrayList<String> words = new ArrayList<>();
+        String filePath;
+
+        CodeSource src = WordsGenerator.class.getProtectionDomain().getCodeSource();
+        try {
+            filePath = src.getLocation().toURI().getPath() + fileName;
+            File file = new File(filePath);
+
+            Scanner in = new Scanner(file).useDelimiter(Pattern.compile("[\\W']+"));
+            while (in.hasNext())
+                Collections.addAll(words, in.next());
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         return words;
     }
 }

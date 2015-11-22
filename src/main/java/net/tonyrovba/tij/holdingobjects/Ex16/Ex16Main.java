@@ -1,5 +1,7 @@
 package net.tonyrovba.tij.holdingobjects.Ex16;
 
+import net.tonyrovba.tij.utils.WordsGenerator;
+
 import java.io.File;
 import java.security.CodeSource;
 import java.util.*;
@@ -16,27 +18,13 @@ import java.util.regex.Pattern;
 public class Ex16Main {
     public static void main(String[] args) {
         final char[] VOWELS_STRING = "AEIOUYaeiouy".toCharArray();
-        final String FILE_NAME = "UniqueWords.txt";
-        String filePath;
-        ArrayList<String> words = new ArrayList<>();
+        final String fileName = "UniqueWords.txt";
+        ArrayList<String> words = WordsGenerator.getWordsFromFile(fileName);
         int overallVowelsCount = 0;
 
         Set<Character> vowels = new HashSet<>();
         for (char ch: VOWELS_STRING)
             vowels.add(ch);
-
-        CodeSource src = Ex16Main.class.getProtectionDomain().getCodeSource();
-        try {
-            filePath = src.getLocation().toURI().getPath() + FILE_NAME;
-            File file = new File(filePath);
-
-            Scanner in = new Scanner(file).useDelimiter(Pattern.compile("[\\W']+"));
-            while (in.hasNext())
-                Collections.addAll(words, in.next());
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
         for (String word: words){
             int wordVowelsCount = 0;
