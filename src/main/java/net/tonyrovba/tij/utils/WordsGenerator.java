@@ -45,4 +45,14 @@ public class WordsGenerator {
 
         return words;
     }
+
+    public static ArrayList<String> getWordsFromString(String string) {
+        ArrayList<String> words = new ArrayList<>();
+
+        Scanner in = new Scanner(string).useDelimiter(Pattern.compile("[\\W']+"));
+        while (in.hasNext())
+            Collections.addAll(words, in.next());
+
+        return words;
+    }
 }
