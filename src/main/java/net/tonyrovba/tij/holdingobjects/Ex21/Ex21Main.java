@@ -36,5 +36,6 @@ public class Ex21Main {
         print += "}";
 
         System.out.println(print);
+        System.out.println(wordsCount.size());
     }
 }
