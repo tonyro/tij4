@@ -4,7 +4,11 @@ import java.util.ArrayList;
 
 /**
  * @author tonyro
+ *
+ * (2) Modify innerclasses/Sequence.java so that you can add any number of elements to it.
+ *
  */
+
 interface Selector {
     boolean end();
     Object current();
@@ -46,7 +50,7 @@ public class Sequence {
         Sequence sequence1 = new Sequence();
         for(int i = 0; i < 30; i++)
             sequence1.add(Integer.toString(i));
-        Selector selector1 = sequence.selector();
+        Selector selector1 = sequence1.selector();
         while(!selector1.end()) {
             System.out.print(selector1.current() + " ");
             selector1.next();
