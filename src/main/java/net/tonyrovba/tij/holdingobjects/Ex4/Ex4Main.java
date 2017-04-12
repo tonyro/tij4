@@ -8,7 +8,7 @@ import java.util.*;
 
 public class Ex4Main {
 
-    static Collection<String> fill(Collection<String> coll, int n) {
+    private static Collection<String> fill(Collection<String> coll, int n) {
         for(int i = 0; i < n; i++) {
             coll.add(MovieNamesGenerator.next());
         }
@@ -24,8 +24,8 @@ public class Ex4Main {
         for (int i = 0; i < n; i++)
             arr[i] = MovieNamesGenerator.next();
 
-        System.out.println("ArrayList -->");
-        System.out.println(arr);
+        System.out.println("Array -->");
+        System.out.println(Arrays.toString(arr));
         System.out.println("----------------------------------");
 
         System.out.println("ArrayList -->");
