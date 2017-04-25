@@ -6,7 +6,7 @@ package net.tonyrovba.tij.holdingobjects.Ex13;
 public class WaterMistControls extends GreenhouseControls {
     private boolean waterMist = false;
     public class WaterMistOn extends Event {
-        public WaterMistOn(long timeDelay) {
+        WaterMistOn(long timeDelay) {
             super(timeDelay);
         }
 
@@ -20,7 +20,7 @@ public class WaterMistControls extends GreenhouseControls {
     }
 
     public class WaterMistOff extends Event {
-        public WaterMistOff(long timeDelay) {
+        WaterMistOff(long timeDelay) {
             super(timeDelay);
         }
 

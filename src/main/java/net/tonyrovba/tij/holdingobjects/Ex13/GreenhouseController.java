@@ -2,7 +2,11 @@ package net.tonyrovba.tij.holdingobjects.Ex13;
 
 /**
  * Created by tonyr on 2/4/14.
+ *
+ * (3) In the innerclasses/GreenhouseController.java example, the class Controller uses an ArrayList.
+ * Change the code to use a LinkedList instead, and use an Iterator to cycle through the set of events.
  */
+
 public class GreenhouseController {
     public static void main(String[] args) {
         GreenhouseControls gc = new GreenhouseControls();

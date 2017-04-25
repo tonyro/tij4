@@ -3,10 +3,11 @@ package net.tonyrovba.tij.holdingobjects.Ex13;
 /**
  * Created by tonyr on 2/4/14.
  */
-public class GreenhouseControls extends Controller {
+
+class GreenhouseControls extends Controller {
     private boolean light = false;
     public class LightOn extends Event {
-        public LightOn(long delayTime) { super(delayTime); }
+        LightOn(long delayTime) { super(delayTime); }
         public void action() {
             // Put hardware control code here to
             // physically turn on the light.
@@ -16,7 +17,7 @@ public class GreenhouseControls extends Controller {
     }
 
     public class LightOff extends Event {
-        public LightOff(long delayTime) { super(delayTime); }
+        LightOff(long delayTime) { super(delayTime); }
         public void action() {
             // Put hardware control code here to
             // physically turn off the light.
@@ -27,7 +28,7 @@ public class GreenhouseControls extends Controller {
 
     private boolean water = false;
     public class WaterOn extends Event {
-        public WaterOn(long delayTime) { super(delayTime); }
+        WaterOn(long delayTime) { super(delayTime); }
         public void action() {
             // Put hardware control code here.
             water = true;
@@ -38,7 +39,7 @@ public class GreenhouseControls extends Controller {
     }
 
     public class WaterOff extends Event {
-        public WaterOff(long delayTime) { super(delayTime); }
+        WaterOff(long delayTime) { super(delayTime); }
         public void action() {
             // Put hardware control code here.
             water = false;
@@ -50,7 +51,7 @@ public class GreenhouseControls extends Controller {
 
     private String thermostat = "Day";
     public class ThermostatNight extends Event {
-        public ThermostatNight(long delayTime) {
+        ThermostatNight(long delayTime) {
             super(delayTime);
         }
         public void action() {
@@ -63,7 +64,7 @@ public class GreenhouseControls extends Controller {
     }
 
     public class ThermostatDay extends Event {
-        public ThermostatDay(long delayTime) {
+        ThermostatDay(long delayTime) {
             super(delayTime);
         }
         public void action() {
@@ -77,7 +78,7 @@ public class GreenhouseControls extends Controller {
 
     private boolean fans = false;
     public class FansOn extends Event {
-        public FansOn(long delayTime) {
+        FansOn(long delayTime) {
             super(delayTime);
         }
 
@@ -90,7 +91,7 @@ public class GreenhouseControls extends Controller {
     }
 
     public class FansOff extends Event {
-        public FansOff(long delayTime) {
+        FansOff(long delayTime) {
             super(delayTime);
         }
 
@@ -105,7 +106,7 @@ public class GreenhouseControls extends Controller {
     // An example of an action() that inserts a
     // new one of itself into the event list:
     public class Bell extends Event {
-        public Bell(long delayTime) { super(delayTime); }
+        Bell(long delayTime) { super(delayTime); }
         public void action() {
             addEvent(new Bell(delayTime));
         }
@@ -114,7 +115,7 @@ public class GreenhouseControls extends Controller {
 
     public class Restart extends Event {
         private Event[] eventList;
-        public Restart(long delayTime, Event[] eventList) {
+        Restart(long delayTime, Event[] eventList) {
             super(delayTime);
             this.eventList = eventList;
             for(Event e : eventList)
@@ -134,7 +135,7 @@ public class GreenhouseControls extends Controller {
     }
 
     public static class Terminate extends Event {
-        public Terminate(long delayTime) { super(delayTime); }
+        Terminate(long delayTime) { super(delayTime); }
         public void action() { System.exit(0); }
         public String toString() { return "Terminating"; }
     }

@@ -6,14 +6,16 @@ package net.tonyrovba.tij.holdingobjects.Ex13;
 
 import java.util.*;
 
-public class Controller {
+class Controller {
     // A class from java.util to hold Event objects:
     private LinkedList<Event> eventList = new LinkedList<Event>();
 
-    public void addEvent(Event c) { eventList.add(c); }
+    void addEvent(Event c) { eventList.add(c); }
 
-    public void run() {
-        ListIterator<Event> it = eventList.listIterator();
+    void run() {
+        // Making a copy of eventList so that we do not modify initial list
+        LinkedList<Event> eventsListCopy = new LinkedList<>(eventList);
+        ListIterator<Event> it = eventsListCopy.listIterator();
         while (it.hasNext()) {
             Event e = it.next();
             if(e.ready()) {
